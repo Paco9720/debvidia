@@ -31,7 +31,7 @@ echo "Instalando el controlador NVIDIA y firmware..."
 sudo apt install -y nvidia-driver firmware-misc-nonfree
 
 echo "Deshabilitando el controlador Nouveau..."
-echo -e "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf > /dev/null
+echo "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf > /dev/null
 sudo update-initramfs -u
 
 echo "La instalación ha finalizado. Por favor, reinicia tu sistema para que los cambios surtan efecto."
