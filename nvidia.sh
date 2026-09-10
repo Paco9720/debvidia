@@ -36,6 +36,13 @@ echo "Deshabilitando el controlador Nouveau..."
 echo -e "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf > /dev/null
 sudo update-initramfs -u
 
+echo "Configurando NVIDIA para Wayland..."
+
+sudo tee /etc/modprobe.d/nvidia-wayland.conf > /dev/null <<'EOF'
+options nvidia-drm modeset=1
+options nvidia-drm fbdev=1
+EOF
+
 echo ""
 echo "======================================================================"
 echo "Instalación completada."
