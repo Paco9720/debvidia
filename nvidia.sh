@@ -41,7 +41,7 @@ sudo update-initramfs -u
 #sudo tee /etc/modprobe.d/nvidia-wayland.conf > /dev/null <<'EOF'
 #options nvidia-drm modeset=1
 #options nvidia-drm fbdev=1
-EOF
+#EOF
 
 echo ""
 echo "======================================================================"
